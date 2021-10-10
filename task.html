@@ -27,6 +27,14 @@
     <button onclick="gradeCheck()">Check Grade</button>
     <p>Your Grade is: <span id="grade"> </span></p>
 
+    <hr />
+    <br>
+
+    <h2>Jacket Checker</h2>
+    Enter temperature <input type="number" id="temp">
+    <button onclick="jacketChecker()">Check</button>
+    <p id='jacket'></p>
+
 </body>
 
 <script>
@@ -76,6 +84,24 @@
         } 
     }
 
+    function jacketChecker() {
+        let temp = Number(document.getElementById("temp").value);
+        let jacket = document.getElementById("jacket");
+
+        if (temp > 25) {
+            jacket.innerHTML = "Don't carry jacket";
+        }
+
+        else if (temp <= 25 && temp >= 15) {
+            jacket.innerHTML = "Carry Jacket";
+        }
+        else if (temp <= 15 && temp >= 0) {
+            jacket.innerHTML = "Carry Coat";
+        }
+        else {
+            jacket.innerHTML = "Don't go out!";
+        }
+    }
 
 </script>
 
