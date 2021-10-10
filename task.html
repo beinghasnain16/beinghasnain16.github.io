@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Task</title>
+</head>
+<body>
+    <h1>HOMETASK</h1>
+    <hr />
+    <hr />
+    <br>
+
+    <h2>Currency Converter</h2>
+    Amount in PKR <input type=number id="pkr"> <p>Result: <span id="res1"> <span></p>
+    <br>
+    Amount in USD <input type=number id="usd"> <p>Result: <span id="res2"> <span></p>
+    <br>
+    <button onclick="convert()">Convert</button>
+
+    <hr />
+    <br>
+
+    <h2>Grade Checker</h2>
+    Enter your Marks <input type="number" id=marks>
+    <button onclick="gradeCheck()">Check Grade</button>
+    <p>Your Grade is: <span id="grade"> </span></p>
+
+</body>
+
+<script>
+
+    function convert(){
+        let pkr1 = document.getElementById("pkr").value;
+        let usd1 = document.getElementById("usd").value;
+        let res1 = document.getElementById("res1");
+        let res2 = document.getElementById("res2");
+
+        if (usd1 == "" && pkr1 != ""){
+            console.log(pkr1)
+            res1.innerHTML = (Number(pkr1)/170).toFixed(2) + " USD";
+        }
+
+        else if (usd1 != "" && pkr1 == ""){
+            console.log(usd1)
+            res2.innerHTML = (Number(usd1) * 170).toFixed(2) + " PKR";
+        }
+        else {
+            res1.innerHTML = (Number(pkr1)/170).toFixed(2) + " USD";
+            res2.innerHTML = (Number(usd1) * 170).toFixed(2) + " PKR";
+        }
+
+    }
+
+    function gradeCheck(){
+        let marks = Number(document.getElementById("marks").value);
+        let grade = document.getElementById("grade");
+        if (marks >= 90) {
+            grade.innerHTML = "A+"
+        } 
+        else if (marks >= 80) {
+            grade.innerHTML = "A"
+        } 
+        else if (marks >= 70) {
+            grade.innerHTML = "B"
+        } 
+        else if (marks >= 60) {
+            grade.innerHTML = "C"
+        } 
+        else if (marks >= 50) {
+            grade.innerHTML = "D"
+        } 
+        else {
+            grade.innerHTML = "FAIL"
+        } 
+    }
+
+
+</script>
+
+</html>
